@@ -1,0 +1,75 @@
+﻿using Business.Services.Abstract;
+using Business.ViewModels.Basket;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Presentation.Controllers;
+
+[Authorize]
+public class BasketController : Controller
+{
+	private readonly IBasketService _basketService;
+
+	public BasketController(IBasketService basketService)
+    {
+		_basketService = basketService;
+	}
+
+    [HttpGet]
+    public async Task<IActionResult> Index()
+    {
+        var model = await _basketService.GetAllAsync();
+        return View(model);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddProduct(int productId)
+    {
+        var result = await _basketService.AddProductAsync(productId);
+        switch (result.statusCode)
+        {
+            case 200:
+                return Ok(result.description);
+            case 400:
+                return BadRequest(result.description);
+            case 404:
+                return NotFound(result.description);  
+            default:
+                return NotFound();
+        }
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> UpdateCart( [FromBody] List<BasketUpdateVM> updatedProducts)
+    {
+        var result = await _basketService.UpdateCartAsync(updatedProducts);
+		switch (result.statusCode)
+		{
+			case 200:
+				return Ok(result.description);
+			case 400:
+				return BadRequest(result.description);
+			case 404:
+				return NotFound(result.description);
+			default:
+				return NotFound();
+		}
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var result = await _basketService.DeleteAsync(id);
+		switch (result.statusCode)
+		{
+			case 200:
+				return Ok(result.description);
+			case 400:
+				return BadRequest(result.description);
+			case 404:
+				return NotFound(result.description);
+			default:
+				return NotFound();
+		}
+	}
+}

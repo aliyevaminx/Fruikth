@@ -1,0 +1,12 @@
+﻿@using Business.ViewModels.Contact
+@model ContactMessageDetailsVM
+
+<ul class="container">
+	<li class="fs-5"><b>From: </b>@Model.Name (@Model.Email) (@Model.PhoneNumber)</li>
+	<br/>
+	<li class="fs-5"><b>Subject: </b> @Model.Subject</li>
+	<br />
+	<li>@Model.Message</li>
+	<br />
+	<a asp-controller="Contact" asp-action="Index" class="btn btn-danger">Back</a>
+</ul>
