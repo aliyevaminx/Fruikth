@@ -1,9 +1,11 @@
 ﻿using Business.Services.Abstract;
+using Business.ViewModels.Comment;
 using Business.ViewModels.News;
 using Core.Entities;
 using Data.Repositories.Abstract;
 using Data.UnitOfWork;
 using IdentityProject.Utilities.File;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
@@ -19,17 +21,25 @@ public class NewsService : INewsService
     private readonly INewsRepository _newsRepository;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IFileService _fileService;
-    private readonly ModelStateDictionary _modelState;
+	private readonly IActionContextAccessor _actionContextAccessor;
+	private readonly UserManager<User> _userManager;
+	private readonly ICommentRepository _commentRepository;
+	private readonly ModelStateDictionary _modelState;
 
     public NewsService(INewsRepository newsRepository,
                        IUnitOfWork unitOfWork,
                        IFileService fileService,
-                       IActionContextAccessor actionContextAccessor)
+                       IActionContextAccessor actionContextAccessor,
+                       UserManager<User> userManager,
+                       ICommentRepository commentRepository)
     {
         _newsRepository = newsRepository;
         _unitOfWork = unitOfWork;
         _fileService = fileService;
-        _modelState = actionContextAccessor.ActionContext.ModelState;
+		_actionContextAccessor = actionContextAccessor;
+		_userManager = userManager;
+		_commentRepository = commentRepository;
+		_modelState = actionContextAccessor.ActionContext.ModelState;
     }
 
     public async Task<NewsIndexVM> GetAllAsync()
@@ -44,10 +54,12 @@ public class NewsService : INewsService
         var news = await _newsRepository.GetAsync(id);
         if (news is not null) return new NewsDetailsVM
         {
+            NewsId = id,
             Title = news.Title,
             Body = news.Body,
             Photo = news.Photo,
             CreatedAt = news.CreatedAt,
+            Comments = await _commentRepository.GetCommentsByNewsId(id)
         };
 
         return null;
@@ -163,5 +175,31 @@ public class NewsService : INewsService
 
         return true;
     }
+
+    public async Task<bool> CreateCommentAsync(CommentCreateVM model)
+    {
+        if (!_modelState.IsValid) return false;
+
+		var checkUser = await _userManager.GetUserAsync(_actionContextAccessor.ActionContext.HttpContext.User);
+		if (checkUser is null) return false;
+
+        var user = await _userManager.FindByEmailAsync(model.Email);
+        if (user != checkUser) return false;
+
+        var result = new Comment
+        {
+            UserId = user.Id,
+            NewsId = model.NewsId,
+            Name = model.Name,
+            Email = model.Email,
+            Message = model.Message,
+            CreatedAt = DateTime.Now,
+        };
+
+        await _commentRepository.CreateAsync(result);
+        await _unitOfWork.CommitAsync();
+
+        return true;
+	}
 
 }

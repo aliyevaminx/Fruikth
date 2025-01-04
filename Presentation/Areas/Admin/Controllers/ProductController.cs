@@ -1,8 +1,10 @@
 ﻿using Business.Services.Abstract;
 using Business.ViewModels.Product;
+using Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Presentation.Areas.Admin.Controllers;
 
@@ -23,17 +25,32 @@ public class ProductController : Controller
     #region Read
 
     [HttpGet]
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(ProductIndexVM model)
     {
-        var model = await _productService.GetAllAsync();
+        var products = Filter(model);
+
+        model = new ProductIndexVM
+        {
+            Products = products.ToList()
+        };
+
         return View(model);
     }
 
-    #endregion
+	#endregion
 
-    #region Create
+	#region Filter
 
-    [HttpGet]
+    private IQueryable<Product> Filter(ProductIndexVM model)
+    {
+        return _productService.GetAllByFilter(model);
+    }
+
+	#endregion
+
+	#region Create
+
+	[HttpGet]
     public async Task<IActionResult> Create()
     {
         var categories = await _productService.CreateAsync();

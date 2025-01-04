@@ -41,4 +41,25 @@ public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         return await _context.Products.OrderByDescending(p => p.CreatedAt).Take(3).ToListAsync();
     }
+
+    public IQueryable<Product> FilterByName(string name)
+    {
+        return name != null ? _context.Products.Include(p => p.ProductCategories)
+                                      .ThenInclude(pc => pc.Category).Where(p => p.Title.Contains(name)) :
+                                      _context.Products.Include(p => p.ProductCategories)
+                                      .ThenInclude(pc => pc.Category);
+
+	}
+
+    public IQueryable<Product> FilterByCount(IQueryable<Product> products, int? minCount, int? maxCount)
+    {
+        return products.Where(p => (minCount != null ? p.StockCount >= minCount : true) &&
+                                (maxCount != null ? p.StockCount <= maxCount : true));
+    }
+
+    public IQueryable<Product> FilterByPrice(IQueryable<Product> products, int? minPrice, int? maxPrice)
+    {
+        return products.Where(p => (minPrice != null ? p.Price >= minPrice : true) &&
+                                   (maxPrice != null ? p.Price <= maxPrice : true));
+    }
 }

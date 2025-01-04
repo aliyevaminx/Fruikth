@@ -16,6 +16,6 @@ public interface IProductService
     Task<bool> CreateAsync(ProductCreateVM model);
     Task<ProductUpdateVM> UpdateAsync(int id);
     Task<bool> UpdateAsync(int id, ProductUpdateVM model);
-
     Task<bool> DeleteAsync(int id);
+    IQueryable<Product> GetAllByFilter(ProductIndexVM model);
 }

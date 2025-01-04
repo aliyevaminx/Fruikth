@@ -46,6 +46,14 @@ public class ProductService : IProductService
         };
     }
 
+    public IQueryable<Product> GetAllByFilter(ProductIndexVM model)
+    {
+        var products = _productRepository.FilterByName(model.Name);
+        products = _productRepository.FilterByCount(products, model.MinCount, model.MaxCount);
+        products = _productRepository.FilterByPrice(products, model.MinPrice, model.MaxPrice);
+        return products;
+    }
+
 
     public async Task<ProductCreateVM> CreateAsync()
     {

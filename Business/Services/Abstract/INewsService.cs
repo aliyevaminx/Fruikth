@@ -1,4 +1,5 @@
-﻿using Business.ViewModels.News;
+﻿using Business.ViewModels.Comment;
+using Business.ViewModels.News;
 using Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,5 +16,6 @@ public interface INewsService
 	Task<bool> CreateAsync(NewsCreateVM model);
     Task<NewsUpdateVM> UpdateAsync(int id);
     Task<bool> UpdateAsync(int id, NewsUpdateVM model);
-    Task<bool> DeleteAsync(int id);   
+    Task<bool> DeleteAsync(int id);
+    Task<bool> CreateCommentAsync(CommentCreateVM model);
 }

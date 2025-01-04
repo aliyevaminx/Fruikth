@@ -48,6 +48,7 @@ builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Str
 
 #region Data
 
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderProductRepository, OrderProductRepository>();
 builder.Services.AddScoped<IBasketProductRepository, BasketProductRepository>();

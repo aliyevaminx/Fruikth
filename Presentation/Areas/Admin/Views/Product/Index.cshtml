@@ -7,6 +7,45 @@
     <a class="btn btn-primary" asp-action="Create" asp-controller="Product">Create</a>
 </div>
 
+<div>
+    <form method="get" asp-action="Index" asp-controller="Product">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="MinCount"></label>
+                    <input asp-for="MinCount" class="form-control">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="MaxCount"></label>
+                    <input asp-for="MaxCount" class="form-control">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="MinPrice"></label>
+                    <input asp-for="MinPrice" class="form-control">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label asp-for="MaxPrice"></label>
+                    <input asp-for="MaxPrice" class="form-control">
+                </div>
+            </div>
+        </div>
+       <br/>
+        <button class="btn btn-primary">Search</button>
+    </form>
+</div>
+
 <table class="table table-hover">
     <thead>
         <tr>

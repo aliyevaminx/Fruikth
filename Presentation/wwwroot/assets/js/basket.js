@@ -1,6 +1,5 @@
 ﻿$(function () {
     $('.addToBasket').on("click", function () {
-        console.log("clicked")
         $.ajax({
             method: "POST",
             url: "/basket/addproduct",

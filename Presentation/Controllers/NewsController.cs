@@ -1,4 +1,5 @@
 ﻿using Business.Services.Abstract;
+using Business.ViewModels.Comment;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,4 +26,12 @@ public class NewsController : Controller
         var model = await _newsService.GetAsync(id);
         return View(model);
     }
+
+    public async Task<IActionResult> CreateComment( [FromBody] CommentCreateVM model)
+    {
+        var IsSucceeded = await _newsService.CreateCommentAsync(model);
+        if (!IsSucceeded) return BadRequest("Failed to add comment.");
+
+		return Ok("Comment added successfully.");
+	}
 }
