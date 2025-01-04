@@ -11,7 +11,8 @@ namespace Business.Services.Abstract;
 public interface INewsService
 {
     Task<NewsIndexVM> GetAllAsync();
-    Task<bool> CreateAsync(NewsCreateVM model);
+    Task<NewsDetailsVM> GetAsync(int id);
+	Task<bool> CreateAsync(NewsCreateVM model);
     Task<NewsUpdateVM> UpdateAsync(int id);
     Task<bool> UpdateAsync(int id, NewsUpdateVM model);
     Task<bool> DeleteAsync(int id);   

@@ -1,5 +1,6 @@
 using Business.Services.Abstract;
 using Business.Services.Concrete;
+using Business.Utilities.Stripe;
 using Core.Entities;
 using Data.Contexts;
 using Data.Repositories.Abstract;
@@ -15,6 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +24,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default"), x => x.MigrationsAssembly("Data")));
-builder.Services.AddSingleton<IFileService, FileService>();
+builder.Services.AddSingleton<IFileService,IdentityProject.Utilities.File.FileService>();
 
 builder.Services.AddIdentity<User, IdentityRole>(options =>
 {
@@ -40,10 +42,14 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
 var emailConfiguration = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
 builder.Services.AddSingleton(emailConfiguration);
 builder.Services.AddSingleton<IEmailService, EmailService>();
+
+builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("Stripe"));
 #endregion
 
 #region Data
 
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IOrderProductRepository, OrderProductRepository>();
 builder.Services.AddScoped<IBasketProductRepository, BasketProductRepository>();
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.AddScoped<IContactRepository, ContactRepository>();
@@ -57,14 +63,16 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 #region Services
 
+builder.Services.AddScoped<IHomeService, HomeService>();
+builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddScoped<IShopService, ShopService>();
 builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddScoped<IAboutService, AboutService>();
 builder.Services.AddScoped<ITeamMemberService, TeamMemberService>();
-builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IAccountService, Business.Services.Concrete.AccountService>();
 builder.Services.AddScoped<INewsService, NewsService>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductService, Business.Services.Concrete.ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 builder.Services.AddSingleton<IUrlHelperFactory, UrlHelperFactory>();
@@ -106,6 +114,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}");
+
+StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe")["SecretKey"];
 
 app.Run();
 

@@ -33,6 +33,7 @@
                     @news.ModifiedAt
                 </td>
                 <td class="text-center d-flex justify-content-center">
+                    <a asp-action="Details" asp-controller="News" asp-route-id="@news.Id" class="btn btn-primary">Details</a>
                     <a class="btn btn-success mx-2" asp-controller="News" asp-action="Update" asp-route-id="@news.Id">Update</a>
                     <form method="post" asp-controller="News" asp-action="Delete" asp-route-id="@news.Id">
                         <button type="submit" class="btn btn-danger">Delete</button>

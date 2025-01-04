@@ -16,7 +16,13 @@
 </div>
 <!-- end breadcrumb section -->
 <!-- cart -->
-<div class="cart-section mt-150 mb-150">
+@if (Model.BasketProducts is null)
+{
+	<h2 class="container mt-5 text-center" style="height: 80vh">Cart is empty</h2>
+} 
+else {
+
+	<div class="cart-section mt-150 mb-150">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-12">
@@ -92,7 +98,7 @@
 					</table>
 					<div class="cart-buttons">
 						<a class="updateCart boxed-btn">Update Cart</a>
-						<a href="checkout.html" class="boxed-btn black">Check Out</a>
+						<a id="checkout-button" class="boxed-btn black">Check Out</a>
 					</div>
 				</div>
 
@@ -109,6 +115,7 @@
 		</div>
 	</div>
 </div>
+}
 <!-- end cart -->
 <!-- logo carousel -->
 <div class="logo-carousel-section">
@@ -140,4 +147,30 @@
 
 @section BasketScripts {
 	<script src="~/assets/js/basket.js"></script>
+
+	<script src="https://js.stripe.com/v3/"></script>
+	<script>
+		var stripe = Stripe('@ViewBag.PublishableKey');
+
+		var checkoutButton = document.getElementById('checkout-button');
+
+		checkoutButton.addEventListener('click', function () {
+			fetch('/Payment/Pay', {
+				method: 'POST',
+			})
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (sessionId) {
+					return stripe.redirectToCheckout({ sessionId: sessionId });
+				})
+				.then(function (result) {
+					if (result.error) {
+						alert(result.error.message);
+					}
+				}).catch(function (error) {
+					console.error('Error:', error);
+				});
+		});
+	</script>
 }

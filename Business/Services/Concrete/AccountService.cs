@@ -111,4 +111,47 @@ public class AccountService : IAccountService
 
         return (true, model.ReturnUrl);
     }
+
+    public async Task<bool> ForgetPasswordAsync(ForgetPasswordVM model)
+    {
+        if (!_modelState.IsValid) return false;
+
+        var user = await _userManager.FindByEmailAsync(model.Email);
+        if (user is null)
+        {
+            _modelState.AddModelError("Email", "User not found");
+            return false;
+        }
+
+        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        var httpContext = _httpContextAccessor.HttpContext;
+        var urlHelper = _urlHelperFactory.GetUrlHelper(new ActionContext(httpContext, httpContext.GetRouteData(), new Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor()));
+        var url = urlHelper.Action(nameof(ResetPassword), "Account", new { token, user.Email }, httpContext.Request.Scheme);
+        _emailService.SendMessage(new Message(new List<string> { user.Email }, "Forget Password?", url));
+
+        return true;
+    }
+
+    public async Task<bool> ResetPassword(ResetPasswordVM model)
+    {
+        if (!_modelState.IsValid) return false;
+
+        var user = await _userManager.FindByNameAsync(model.Email);
+        if (user is null)
+        {
+            _modelState.AddModelError("Password", "It was not possible to update the password");
+            return false;
+        }
+
+        var result = await _userManager.ResetPasswordAsync(user, model.Token, model.NewPassword);
+        if (!result.Succeeded)
+        {
+            foreach (var error in result.Errors)
+                _modelState.AddModelError(string.Empty, error.Description);
+
+            return false;
+        }
+
+        return true;
+    }
 }

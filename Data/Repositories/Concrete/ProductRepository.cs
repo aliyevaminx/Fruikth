@@ -36,4 +36,9 @@ public class ProductRepository : BaseRepository<Product>, IProductRepository
                                       .ThenInclude(pc => pc.Category)
                                       .FirstOrDefaultAsync(p => p.Id == id);
     }
+
+    public async Task<List<Product>> GetLastThreeProducts()
+    {
+        return await _context.Products.OrderByDescending(p => p.CreatedAt).Take(3).ToListAsync();
+    }
 }

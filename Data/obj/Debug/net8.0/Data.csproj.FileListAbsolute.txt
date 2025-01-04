@@ -15,3 +15,4 @@ C:\Users\Amin\source\repos\Fruitkha\Data\bin\Debug\net8.0\Core.pdb
 C:\Users\Amin\source\repos\Fruitkha\Data\obj\Debug\net8.0\Data.csproj.AssemblyReference.cache
 C:\Users\Amin\source\repos\Fruitkha\Data\obj\Debug\net8.0\Data.csproj.Up2Date
 C:\Users\Amin\source\repos\Fruitkha\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
+C:\Users\Amin\source\repos\Fruitkha\Data\obj\Debug\net8.0\Data.sourcelink.json

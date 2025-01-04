@@ -1,7 +1,9 @@
 ﻿using Business.Services.Abstract;
+using Business.Utilities.Stripe;
 using Business.ViewModels.Basket;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Presentation.Controllers;
 
@@ -9,16 +11,22 @@ namespace Presentation.Controllers;
 public class BasketController : Controller
 {
 	private readonly IBasketService _basketService;
+	private readonly StripeSettings _stripeSettings;
 
-	public BasketController(IBasketService basketService)
+
+	public BasketController(IBasketService basketService,
+							IOptions<StripeSettings> stripeSettings)
     {
 		_basketService = basketService;
+		_stripeSettings = stripeSettings.Value;
 	}
 
-    [HttpGet]
+	[HttpGet]
     public async Task<IActionResult> Index()
     {
-        var model = await _basketService.GetAllAsync();
+		ViewBag.PublishableKey = _stripeSettings.PublishableKey;
+
+		var model = await _basketService.GetAllAsync();
         return View(model);
     }
 

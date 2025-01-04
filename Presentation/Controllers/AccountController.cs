@@ -1,6 +1,9 @@
 ﻿using Business.Services.Abstract;
 using Business.ViewModels.Account;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace Presentation.Controllers;
 
@@ -61,6 +64,44 @@ public class AccountController : Controller
         }
 
         return View(model);
+    }
+
+    #endregion
+
+    #region ForgetPassword
+
+    [HttpGet]
+    public IActionResult ForgetPassword()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ForgetPassword(ForgetPasswordVM model)
+    {
+        var IsSucceeded = await _accountService.ForgetPasswordAsync(model);
+        if (!IsSucceeded) return BadRequest(); 
+
+        return Ok("Mail sent successfully");
+    }
+
+    #endregion
+
+    #region ResetPassword
+
+    [HttpGet]
+    public IActionResult ResetPassword()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> ResetPassword(ResetPasswordVM model)
+    {
+        var IsSucceeded = await _accountService.ResetPassword(model);
+        if (IsSucceeded) return RedirectToAction("Login", "Account");
+
+        return BadRequest("Unsuccessfully");
     }
 
     #endregion

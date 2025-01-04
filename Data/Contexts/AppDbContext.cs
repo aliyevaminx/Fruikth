@@ -19,8 +19,11 @@ public class AppDbContext : IdentityDbContext<User>
     public DbSet<ContactMessage> ContactMessages { get; set; }
 	public DbSet<Basket> Baskets { get; set; }
 	public DbSet<BasketProduct> BasketProducts { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderProduct> OrderProducts { get; set; }
+    public DbSet<Comment> Comments { get; set; }
 
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 

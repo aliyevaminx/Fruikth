@@ -12,5 +12,5 @@ public class User : IdentityUser
 	public string City { get; set; }
 	public string Country { get; set; }
 	public Basket Basket { get; set; }
-
+	public ICollection<Comment> Comments { get; set; }
 }

@@ -24,4 +24,9 @@ public class NewsRepository : BaseRepository<News>, INewsRepository
     {
         return await _context.News.FirstOrDefaultAsync(x => x.Title == title);
     }
+
+    public async Task<List<News>> GetLastThreeNews()
+    {
+        return await _context.News.OrderByDescending(p => p.CreatedAt).Take(3).ToListAsync();
+    }
 }

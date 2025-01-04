@@ -13,4 +13,5 @@ public interface IProductRepository : IBaseRepository<Product>
     Task<Product> GetProductWithCategoriesAsync(int id);
     Task<List<Product>> GetAllProductsWithCategoriesAsync();
     Task<Product> GetProductByTitleAsync(string title);
+    Task<List<Product>> GetLastThreeProducts();
 }

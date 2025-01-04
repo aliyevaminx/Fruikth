@@ -39,6 +39,20 @@ public class NewsService : INewsService
         };
     }
 
+    public async Task<NewsDetailsVM> GetAsync(int id)
+    {
+        var news = await _newsRepository.GetAsync(id);
+        if (news is not null) return new NewsDetailsVM
+        {
+            Title = news.Title,
+            Body = news.Body,
+            Photo = news.Photo,
+            CreatedAt = news.CreatedAt,
+        };
+
+        return null;
+    }
+
     public async Task<bool> CreateAsync(NewsCreateVM model)
     {
         if (!_modelState.IsValid) return false;

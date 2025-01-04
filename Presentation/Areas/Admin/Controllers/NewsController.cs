@@ -26,11 +26,17 @@ public class NewsController : Controller
         return View(model);
     }
 
-    #endregion
+	public async Task<IActionResult> Details(int id)
+	{
+		var model = await _newsService.GetAsync(id);
+		return View(model);
+	}
 
-    #region Create
+	#endregion
 
-    [HttpGet]
+	#region Create
+
+	[HttpGet]
     public IActionResult Create()
     {
         return View();
