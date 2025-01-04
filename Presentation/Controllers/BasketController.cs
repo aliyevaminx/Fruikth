@@ -64,10 +64,10 @@ public class BasketController : Controller
 		}
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Delete(int id)
+	[HttpPost]
+	public async Task<IActionResult> Delete(int basketProductId)
     {
-        var result = await _basketService.DeleteAsync(id);
+        var result = await _basketService.DeleteAsync(basketProductId);
 		switch (result.statusCode)
 		{
 			case 200:

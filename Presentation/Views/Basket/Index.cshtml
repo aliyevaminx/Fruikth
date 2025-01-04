@@ -43,7 +43,9 @@ else {
 							@foreach (var basketProduct in Model.BasketProducts)
 							{
 								<tr class="table-body-row">
-									<td class="product-remove"><a class="deleteProduct" data-id="@basketProduct.ProductId"><i class="far fa-window-close"></i></a></td>
+									<td class="product-remove">
+										<a class="deleteProduct" data-id="@basketProduct.ProductId"><i class="far fa-window-close"></i></a>
+									</td>
 									<td class="product-image"><img src="~/assets/img/@basketProduct.Product.Photo" alt=""></td>
 									<td class="product-name">@basketProduct.Product.Title</td>
 									<td class="product-price">$@basketProduct.Product.Price</td>

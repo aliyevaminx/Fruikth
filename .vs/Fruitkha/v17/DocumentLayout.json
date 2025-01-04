@@ -1,44 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\presentation\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\newscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\presentation\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|solutionrelative:presentation\\areas\\admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\presentation\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|solutionrelative:presentation\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69C1E638-1B82-42F6-91CA-586D624B1070}|Business\\Business.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\business\\services\\concrete\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69C1E638-1B82-42F6-91CA-586D624B1070}|Business\\Business.csproj|solutionrelative:business\\services\\concrete\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F3B019C-C206-49F1-841C-0FCF906B6487}|Data\\Data.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\data\\repositories\\concrete\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F3B019C-C206-49F1-841C-0FCF906B6487}|Data\\Data.csproj|solutionrelative:data\\repositories\\concrete\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F3B019C-C206-49F1-841C-0FCF906B6487}|Data\\Data.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\data\\repositories\\abstract\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F3B019C-C206-49F1-841C-0FCF906B6487}|Data\\Data.csproj|solutionrelative:data\\repositories\\abstract\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\presentation\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1EA2C39F-A689-410F-AC9C-A5CEB8B8DCF6}|Presentation\\Presentation.csproj|solutionrelative:presentation\\areas\\admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69C1E638-1B82-42F6-91CA-586D624B1070}|Business\\Business.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\business\\viewmodels\\product\\productindexvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69C1E638-1B82-42F6-91CA-586D624B1070}|Business\\Business.csproj|solutionrelative:business\\viewmodels\\product\\productindexvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{69C1E638-1B82-42F6-91CA-586D624B1070}|Business\\Business.csproj|c:\\users\\amin\\source\\repos\\fruitkha\\business\\services\\abstract\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{69C1E638-1B82-42F6-91CA-586D624B1070}|Business\\Business.csproj|solutionrelative:business\\services\\abstract\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -46,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,115 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Presentation\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T09:21:21.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NewsController.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Controllers\\NewsController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Controllers\\NewsController.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Controllers\\NewsController.cs",
-              "RelativeToolTip": "Presentation\\Controllers\\NewsController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwCUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T09:21:21.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Business\\Services\\Abstract\\IProductService.cs",
-              "RelativeDocumentMoniker": "Business\\Services\\Abstract\\IProductService.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Business\\Services\\Abstract\\IProductService.cs",
-              "RelativeToolTip": "Business\\Services\\Abstract\\IProductService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAiwBMAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T09:12:15.09Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Data\\Repositories\\Abstract\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repositories\\Abstract\\IProductRepository.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Data\\Repositories\\Abstract\\IProductRepository.cs",
-              "RelativeToolTip": "Data\\Repositories\\Abstract\\IProductRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T09:11:07.656Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Business\\Services\\Concrete\\ProductService.cs",
-              "RelativeDocumentMoniker": "Business\\Services\\Concrete\\ProductService.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Business\\Services\\Concrete\\ProductService.cs",
-              "RelativeToolTip": "Business\\Services\\Concrete\\ProductService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAABeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T09:10:07.764Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Data\\Repositories\\Concrete\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repositories\\Concrete\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Data\\Repositories\\Concrete\\ProductRepository.cs",
-              "RelativeToolTip": "Data\\Repositories\\Concrete\\ProductRepository.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAuwDsAAABoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T08:56:55.654Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductIndexVM.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Business\\ViewModels\\Product\\ProductIndexVM.cs",
-              "RelativeDocumentMoniker": "Business\\ViewModels\\Product\\ProductIndexVM.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Business\\ViewModels\\Product\\ProductIndexVM.cs",
-              "RelativeToolTip": "Business\\ViewModels\\Product\\ProductIndexVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T08:48:04.889Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "RelativeDocumentMoniker": "Presentation\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "RelativeToolTip": "Presentation\\Areas\\Admin\\Views\\Product\\Index.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAuwCcAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-04T08:36:48.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Presentation\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Presentation\\Areas\\Admin\\Controllers\\ProductController.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAcwBwAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T08:36:36.111Z"
             }
           ]
         }

@@ -11,8 +11,8 @@
 						<p class="subtitle">Fresh & Organic</p>
 						<h1>Delicious Seasonal Fruits</h1>
 						<div class="hero-btns">
-							<a href="shop.html" class="boxed-btn">Fruit Collection</a>
-							<a href="contact.html" class="bordered-btn">Contact Us</a>
+							<a asp-action="Index" asp-controller="Shop" class="boxed-btn">Fruit Collection</a>
+							<a asp-action="Index" asp-controller="Contact" class="bordered-btn">Contact Us</a>
 						</div>
 					</div>
 				</div>
@@ -230,13 +230,13 @@
 					<div class="single-latest-news">
 						<a asp-action="Details" asp-controller="News" asp-route-id="@news.Id"><div class="latest-news-bg news-bg-1" style="background-image: url('@Url.Content("~/assets/img/" + news.Photo)')"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single-news.html">@news.Title</a></h3>
+							<h3><a asp-action="Details" asp-controller="News" asp-route-id="@news.Id">@news.Title</a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i>@news.CreatedAt.ToString("MMM dd, yyyy")</span>
 							</p>
 							<p class="excerpt">@news.Body.Substring(0, 100)</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<a asp-action="Details" asp-controller="News" asp-route-id="@news.Id" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>	

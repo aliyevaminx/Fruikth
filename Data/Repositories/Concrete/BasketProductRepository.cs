@@ -27,6 +27,6 @@ public class BasketProductRepository : BaseRepository<BasketProduct>, IBasketPro
 
 	public async Task<BasketProduct> GetByProductIdAndUserId(int productId, string userId)
 	{
-		return await _context.BasketProducts.FirstOrDefaultAsync(bp => bp.ProductId == productId && bp.Basket.UserId == userId);
+		return await _context.BasketProducts.Include(bp => bp.Basket).FirstOrDefaultAsync(bp => bp.ProductId == productId && bp.Basket.UserId == userId);
 	}
 }

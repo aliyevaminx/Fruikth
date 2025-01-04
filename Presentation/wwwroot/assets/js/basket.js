@@ -44,12 +44,7 @@
         })
     })
 
-    $('.deleteProduct').on("click", function () {
-        var btn = $(this)
-        var basketProductId = $(this).data('id')
-
-        console.log(btn)
-
+    $(".deleteProduct").on("click", function () {
         $.ajax({
             method: "POST",
             url: "/Basket/Delete",
@@ -57,12 +52,13 @@
                 basketProductId: $(this).data('id')
             },
             success: function (response) {
-                $(btn).parent().parent().remove()
-                location.reload()
+                alert(response)
+                location.reload();
             },
             error: function (xhr) {
                 alert(xhr.responseText)
             }
         })
     })
+
 })
