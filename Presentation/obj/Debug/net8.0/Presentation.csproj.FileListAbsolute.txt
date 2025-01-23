@@ -74,7 +74,6 @@ C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Composi
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Composition.Runtime.dll
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Composition.TypedParts.dll
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
-C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Formats.Asn1.dll
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Reflection.MetadataLoadContext.dll
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\System.Security.Permissions.dll
@@ -271,3 +270,7 @@ C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\NETCore.MailKi
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\BouncyCastle.Crypto.dll
 C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\Stripe.net.dll
 C:\Users\Amin\source\repos\Fruitkha\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json
+C:\Users\Amin\source\repos\Fruitkha\Presentation\bin\Debug\net8.0\Presentation.staticwebassets.endpoints.json
+C:\Users\Amin\source\repos\Fruitkha\Presentation\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Amin\source\repos\Fruitkha\Presentation\obj\Debug\net8.0\staticwebassets\msbuild.Presentation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Amin\source\repos\Fruitkha\Presentation\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

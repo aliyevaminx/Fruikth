@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Presentation.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Presentation.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Presentation.ewjtt9c9qa.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\wwwroot\\admin-assets\\css\\icons\\tabler-icons\\fonts\\tabler-icons.eot",
@@ -1941,6 +1941,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\455a7b09-c5e7-4a7f-be30-c8489b4cae52_product-img-1.jpg"
     },
     {
+      "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\wwwroot\\assets\\img\\75878cb7-548a-4546-85e2-e61cd64ed83c_news4.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\75878cb7-548a-4546-85e2-e61cd64ed83c_news4.jpeg"
+    },
+    {
       "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\wwwroot\\assets\\img\\849ad597-97b6-4edc-97c0-16a934ee274d_news-1.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\849ad597-97b6-4edc-97c0-16a934ee274d_news-1.jpeg"
     },
@@ -1955,6 +1959,10 @@
     {
       "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\wwwroot\\assets\\img\\99a2e180-36ee-450c-abcf-7dd87564425c_member2.jpeg",
       "PackagePath": "staticwebassets\\assets\\img\\99a2e180-36ee-450c-abcf-7dd87564425c_member2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\wwwroot\\assets\\img\\9a84075a-d4a7-435b-a1cb-2c1d50b861ce_member3.jpeg",
+      "PackagePath": "staticwebassets\\assets\\img\\9a84075a-d4a7-435b-a1cb-2c1d50b861ce_member3.jpeg"
     },
     {
       "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\wwwroot\\assets\\img\\a.jpg",
@@ -2543,6 +2551,10 @@
     {
       "Id": "C:\\Users\\Amin\\source\\repos\\Fruitkha\\Presentation\\wwwroot\\login-assets\\js\\popper.min.js",
       "PackagePath": "staticwebassets\\login-assets\\js\\popper.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Presentation.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",
